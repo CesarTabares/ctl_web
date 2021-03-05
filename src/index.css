@@ -90,10 +90,15 @@ code {
 
 :root {
   --purple: #2e1c6b;
+  --orange: #ff7000;
 }
 
 .col_purple {
   color: #2e1c6b;
+}
+
+.col_orange {
+  color: #ff7000;
 }
 
 .col_white {
@@ -140,6 +145,12 @@ p {
 .simple_flex {
   display: flex;
   align-items: center;
+}
+
+.simple_flex_centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*
