@@ -7,7 +7,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
+import { Carousel as Carousel_single } from "react-responsive-carousel";
+import quotes from "./img/quotes_img.svg";
+import logo_sena from "./img/logoSena.png";
+import udem from "./img/udem.png";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 function WebHome() {
   const getConfigurableProps = () => ({
@@ -29,8 +34,28 @@ function WebHome() {
     // swipeScrollTolerance: number("swipeScrollTolerance", 5, {}, valuesGroupId),
   });
 
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
+
   return (
-    <>
+    <div style={{ overflow: "hidden" }}>
       <div className="top_infoline_container">
         <div className="width_container" style={{ height: "100%" }}>
           <div className="info_topinfo_bar">
@@ -72,15 +97,16 @@ function WebHome() {
           </div>
         </nav>
       </div>
+      {/* Carousel */}
       <div style={{ position: "relative" }}>
-        <Carousel {...getConfigurableProps()}>
+        <Carousel_single {...getConfigurableProps()}>
           <div>
             <img src={lab_glass} height="500px" />
           </div>
           <div>
             <img src={lab_glass} height="500px" />
           </div>
-        </Carousel>
+        </Carousel_single>
         <div className="width_container" id="ontop_carousel">
           <div className="ontop_carousel_container">
             <div className="ontop_carousel_container__subcontainer">
@@ -98,6 +124,7 @@ function WebHome() {
           </div>
         </div>
       </div>
+      {/* Middle Description */}
       <div className="width_container">
         <div className="line_after_carousel" />
         <h2
@@ -157,6 +184,7 @@ function WebHome() {
           </div>
         </div>
       </div>
+      {/* Sectors Section */}
       <div className="background_sectors_container">
         <div className="width_container" style={{ height: "100%" }}>
           <div className="container_sectors_flex">
@@ -182,7 +210,7 @@ function WebHome() {
             <div className="sectors_flex_right">
               <div
                 className="sector_rectangle combination_1 shadow_sector"
-                style={{ height: "250px", width: "170px", top: "-95px" }}
+                style={{ height: "250px", width: "170px", top: "-18%" }}
               >
                 <img src={signo_int} height="70px" />
                 <h3 style={{ marginTop: "50px" }}> 111111</h3>
@@ -192,21 +220,20 @@ function WebHome() {
                 style={{
                   height: "200px",
                   width: "170px",
-                  top: "40px",
-                  left: "200px",
+                  top: "8%",
+                  left: "32%",
                 }}
               >
                 <img src={signo_int} height="70px" />
                 <h3 style={{ marginTop: "50px" }}> 22222</h3>
               </div>
-
               <div
                 className="sector_rectangle combination_2 shadow_sector"
                 style={{
                   height: "250px",
                   width: "185px",
-                  top: "275px",
-                  left: "200px",
+                  top: "55%",
+                  left: "32%",
                 }}
               >
                 <img src={signo_int} height="70px" />
@@ -217,8 +244,8 @@ function WebHome() {
                 style={{
                   height: "220px",
                   width: "170px",
-                  top: "180px",
-                  left: "40px",
+                  top: "37%",
+                  left: "7%",
                 }}
               >
                 <img src={signo_int} height="70px" />
@@ -229,8 +256,8 @@ function WebHome() {
                 style={{
                   height: "230px",
                   width: "170px",
-                  top: "-70px",
-                  left: "410px",
+                  top: "-14%",
+                  left: "68%",
                 }}
               >
                 <img src={signo_int} height="70px" />
@@ -241,8 +268,8 @@ function WebHome() {
                 style={{
                   height: "250px",
                   width: "170px",
-                  top: "25px",
-                  left: "500px",
+                  top: "5%",
+                  left: "82.5%",
                 }}
               >
                 <img src={signo_int} height="70px" />
@@ -253,8 +280,8 @@ function WebHome() {
                 style={{
                   height: "230px",
                   width: "170px",
-                  top: "185px",
-                  left: "410px",
+                  top: "38%",
+                  left: "68%",
                 }}
               >
                 <img src={signo_int} height="70px" />
@@ -265,8 +292,8 @@ function WebHome() {
                 style={{
                   height: "200px",
                   width: "170px",
-                  top: "300px",
-                  left: "100%",
+                  top: "62%",
+                  right: "-25%",
                 }}
               >
                 <img src={signo_int} height="70px" />
@@ -276,7 +303,81 @@ function WebHome() {
           </div>
         </div>
       </div>
-    </>
+      {/* Quotes Section */}
+
+      <div className="width_container">
+        <div
+          className="quote_section simple_flex_centered"
+          style={{ flexDirection: "column" }}
+        >
+          <img src={quotes} width="155px" style={{ marginBottom: "50px" }} />
+          <p
+            style={{
+              maxWidth: "750px",
+              textAlign: "center",
+              fontStyle: "italic",
+              fontSize: "24px",
+              lineHeight: "30px",
+              marginBottom: "10px",
+            }}
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+            temporibus explicabo in blanditiis sequi? Sed.
+          </p>
+          <p
+            style={{
+              maxWidth: "750px",
+              textAlign: "center",
+              fontStyle: "italic",
+              color: "#707070",
+            }}
+          >
+            Cesar Tabares. Gerente CTL Companys
+          </p>
+        </div>
+      </div>
+
+      {/* Success Cases Section */}
+      <div className="width_container">
+        <h1 style={{ textAlign: "center", marginBottom: "50px" }}>
+          Casos de Exito
+        </h1>
+        <Carousel
+          responsive={responsive}
+          arrows={false}
+          swipeable={true}
+          draggable={true}
+          showDots={false}
+          responsive={responsive}
+          ssr={false} // means to render carousel on server-side.
+          infinite={true}
+          autoPlay={true}
+          autoPlaySpeed={1000}
+          keyBoardControl={true}
+          transitionDuration={500}
+          containerClass="carousel-container"
+          removeArrowOnDeviceType={["tablet", "mobile"]}
+          dotListClass="custom-dot-list-style"
+          itemClass="carousel-item-padding-40-px"
+        >
+          <div>
+            <img src={logo_sena} width="100px" />
+          </div>
+          <div>
+            <img src={logo_sena} width="100px" />
+          </div>
+          <div>
+            <img src={logo_sena} width="100px" />
+          </div>
+          <div>
+            <img src={logo_sena} width="100px" />
+          </div>
+          <div>
+            <img src={udem} width="100px" />
+          </div>
+        </Carousel>
+      </div>
+    </div>
   );
 }
 
