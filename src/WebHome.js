@@ -1,11 +1,10 @@
 import React from "react";
 import "./WebHome.css";
-import logo_nav_bar from "./img/ctl_logo_nav.png";
 import lab_glass from "./img/laboratory_installations.jpg";
 import signo_int from "./img/signo-de-interrogacion.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faPhoneAlt, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faBuilding } from "@fortawesome/free-regular-svg-icons";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel as Carousel_single } from "react-responsive-carousel";
 import quotes from "./img/quotes_img.svg";
@@ -42,7 +41,7 @@ function WebHome() {
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 3,
+      items: 4,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -56,47 +55,6 @@ function WebHome() {
 
   return (
     <div style={{ overflow: "hidden" }}>
-      <div className="top_infoline_container">
-        <div className="width_container" style={{ height: "100%" }}>
-          <div className="info_topinfo_bar">
-            <div className="simple_flex">
-              <div className="simple_flex">
-                <FontAwesomeIcon icon={faPhoneAlt} color="white" />
-                <h4 style={{ marginLeft: "7px" }} className="col_white">
-                  +574 444 0037
-                </h4>
-              </div>
-              <div className="simple_flex" style={{ marginLeft: "25px" }}>
-                <FontAwesomeIcon icon={faEnvelope} color="white" />
-                <h4 style={{ marginLeft: "7px" }} className="col_white">
-                  info@ctlcompany.com
-                </h4>
-              </div>
-            </div>
-            <div>
-              <h4 style={{ marginLeft: "7px" }} className="col_white">
-                Por el Servicio
-              </h4>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="width_container">
-        <nav className="nav_container">
-          <div className="nav_container_image">
-            <img src={logo_nav_bar} />
-          </div>
-          <div className="nav_links_container">
-            <h3 className="nav_link">INICIO</h3>
-            <div className="border_nav_link" />
-            <h3 className="nav_link">NOSOTROS</h3>
-            <div className="border_nav_link" />
-            <h3 className="nav_link">PRODUCTOS</h3>
-            <div className="border_nav_link" />
-            <h3 className="nav_link">CONTACTO</h3>
-          </div>
-        </nav>
-      </div>
       {/* Carousel */}
       <div style={{ position: "relative" }}>
         <Carousel_single {...getConfigurableProps()}>
@@ -342,40 +300,45 @@ function WebHome() {
         <h1 style={{ textAlign: "center", marginBottom: "50px" }}>
           Casos de Exito
         </h1>
-        <Carousel
-          responsive={responsive}
-          arrows={false}
-          swipeable={true}
-          draggable={true}
-          showDots={false}
-          responsive={responsive}
-          ssr={false} // means to render carousel on server-side.
-          infinite={true}
-          autoPlay={true}
-          autoPlaySpeed={1000}
-          keyBoardControl={true}
-          transitionDuration={500}
-          containerClass="carousel-container"
-          removeArrowOnDeviceType={["tablet", "mobile"]}
-          dotListClass="custom-dot-list-style"
-          itemClass="carousel-item-padding-40-px"
+        <div
+          style={{
+            paddingBottom: "30px",
+            position: "relative",
+          }}
         >
-          <div>
-            <img src={logo_sena} width="100px" />
-          </div>
-          <div>
-            <img src={logo_sena} width="100px" />
-          </div>
-          <div>
-            <img src={logo_sena} width="100px" />
-          </div>
-          <div>
-            <img src={logo_sena} width="100px" />
-          </div>
-          <div>
-            <img src={udem} width="100px" />
-          </div>
-        </Carousel>
+          <Carousel
+            responsive={responsive}
+            swipeable={true}
+            draggable={true}
+            arrows={false}
+            responsive={responsive}
+            ssr={false} // means to render carousel on server-side.
+            infinite={true}
+            autoPlay={true}
+            autoPlaySpeed={1000}
+            keyBoardControl={true}
+            transitionDuration={2000}
+            containerClass="carousel-container"
+            removeArrowOnDeviceType={["tablet", "mobile"]}
+            itemClass="miclase_carousel"
+          >
+            <div>
+              <img src={logo_sena} width="100px" />
+            </div>
+            <div>
+              <img src={logo_sena} width="100px" />
+            </div>
+            <div>
+              <img src={logo_sena} width="100px" />
+            </div>
+            <div>
+              <img src={logo_sena} width="100px" />
+            </div>
+            <div>
+              <img src={udem} width="100px" />
+            </div>
+          </Carousel>
+        </div>
       </div>
     </div>
   );

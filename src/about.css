@@ -1,0 +1,48 @@
+.profile_company {
+  box-sizing: border-box;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  width: 100;
+  background-color: rgb(241, 230, 247);
+  margin: 80px 0 80px 0;
+}
+
+.flex_profile_vision {
+  display: flex;
+  justify-content: space-between;
+}
+
+.history_img_container {
+  width: 100%;
+  height: auto;
+  margin-top: 40px;
+}
+
+.profile_container {
+  flex: 0.45;
+}
+
+.title_profile {
+  margin-bottom: 30px;
+  font-size: 40px;
+}
+
+.paragraph_profile {
+  line-height: 27px;
+}
+
+.flex_our_team_title {
+  display: flex;
+}
+
+.line_our_team {
+  height: 70px;
+  width: 7px;
+  border-radius: 20px;
+  background-color: var(--orange);
+  margin-right: 10px;
+}
+
+.carousel_container_about {
+  margin-top: 50px;
+}
